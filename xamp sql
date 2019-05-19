@@ -1,0 +1,18 @@
+<?php
+	$db=mysqli_connect('localhost','root','','website1') or die("Connect".mysqli_connect_error());
+	$name=$_POST['myname'];
+	$email=$_POST['email'];
+	$password=$_POST['password'];
+	 $password= md5($password);
+	 $query= "insert into student_database(`name`,`email`,`password`)  values('$name','$email','$password')";
+	$check= mysqli_query($db,$query);
+	if($check){
+		echo"YEah .. data is uploaded..!!!";}
+
+	else{echo "NOpes Bad Luck!";
+	}
+
+
+
+
+		?>
